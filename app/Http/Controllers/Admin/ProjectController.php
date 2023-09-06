@@ -42,6 +42,7 @@ class ProjectController extends Controller
         );
 
         //$data = $request->all();
+
         $project = new Project();
 
         if (array_key_exists('cover', $data)) {
