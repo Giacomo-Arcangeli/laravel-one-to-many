@@ -13,8 +13,10 @@
                         <h5 class="card-title">{{ $project->title }}</h5>
                         <p class="card-text"><small class="text-body-secondary">{{ $project->year }}</small></p>
                         <p class="card-text">{{ $project->description }}</p>
-                        <p class="card-text text-body-secondary">Created at: {{ $project->created_at }}</p>
-                        <p class="card-text text-body-secondary">Updated at: {{ $project->updated_at }}</p>
+                        <p class="card-text"><strong>Type:</strong>
+                            {{ $project->type ? $project->type->label : 'Undefined' }}</p>
+                        <p class="card-text"><strong>Created at:</strong> {{ $project->created_at }}</p>
+                        <p class="card-text"><strong>Updated at:</strong> {{ $project->updated_at }}</p>
                         <div class="buttons d-flex gap-1">
                             <a class="btn btn-primary" href="{{ route('admin.projects.index') }}">Back</a>
                             <a class="btn btn-warning" href="{{ route('admin.projects.edit', $project) }}">Edit</a>
