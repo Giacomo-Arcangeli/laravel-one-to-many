@@ -14,7 +14,6 @@
                 <th scope="col">Title</th>
                 <th scope="col">Type</th>
                 <th scope="col">Created at</th>
-                <th></th>
             </tr>
         </thead>
         <tbody>

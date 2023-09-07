@@ -23,6 +23,26 @@
         </div>
     </div>
 
+    {{-- Type --}}
+    <div class="col-4">
+        <div class="mb-3">
+            <label for="type" class="form-label">Type</label>
+            <select class="form-select" id="type" name="type_id"
+                @error('type_id') is-invalid @elseif(old('type_id')) is-valid @enderror>
+                <option value="">Undefined</option>
+                @foreach ($types as $type)
+                    <option @if (old('type_id', $project->type_id) == $type->id) selected @endif value="{{ $type->id }}">
+                        {{ $type->label }}
+                    </option>
+                @endforeach
+            </select>
+            @error('type_id')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+    </div>
 
     {{-- Cover --}}
     <div class="col-12">
@@ -44,7 +64,7 @@
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea class="form-control @error('description') is-invalid @elseif(old('description')) is-valid @enderror"
-                name="description" id="description" rows="20">{{ old('description', $project->description) }}</textarea>
+                name="description" id="description" rows="15">{{ old('description', $project->description) }}</textarea>
             @error('description')
                 <div class="invalid-feedback">
                     {{ $message }}

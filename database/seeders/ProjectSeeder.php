@@ -22,7 +22,7 @@ class ProjectSeeder extends Seeder
 
             $project->title = $faker->sentence(3);
             // $project->cover = Storage::putFile('project_covers', $faker->image(storage_path('app/public/project_covers'), 250, 250));
-            $project->description = $faker->paragraphs(10, true);
+            $project->description = $faker->paragraphs(5, true);
 
             $project->save();
         }
